@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Contact form</title>
+</head>
+<body>
+  <div class="card">
+    <form action="" novalidate>
+      <h1>Contact Us</h1>
+      <div class="full-name">
+        <div class="fname">
+          <label for="first-name" class="main-label">First Name</label>
+          <input type="text" id="first-name" name="first-name" required>
+          <span class="error-msg">This field is required</span>
+        </div>
+        <div class="lname">
+          <label for="last-name" class="main-label">Last Name</label>
+          <input type="text" id="last-name" name="last-name" required>
+          <span class="error-msg">This field is required</span>
+        </div>
+      </div>
+      <label for="email" class="main-label">Email Address</label>
+      <input type="email" id="email" name="email" required>
+      <span class="error-msg">Please enter a valid email address</span>
+
+      <label for="query-type" class="main-label">Query Type</label>
+
+      <div class="checkbox-group-container">
+        <label class="checkbox-box">
+          <input type="checkbox" name="query-general" value="general">
+          <span class="circle"></span> General Enquiry
+        </label>
+
+        <label class="checkbox-box">
+          <input type="checkbox" name="query-support" value="support">
+          <span class="circle"></span>
+          Support Request
+        </label>
+      </div>
+      <span class="error-msg">Please select at least one query type</span>
+
+      <label for="message" class="main-label">Message</label>
+      <textarea id="message" name="message" required></textarea>
+      <span class="error-msg">This field is required</span>
+      <div class="consent-box">
+        <div class="square">
+          <input type="checkbox" id="consent" name="consent" required>
+        </div>
+        <label for="consent" class="main-label">I consent to being contacted by the team</label>
+      </div>
+      <span class="error-msg">To submit this form, please consent to being contacted</span>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <div id="message-sent">
+    <div class="sent">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="24" height="24" fill="white"><path d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM320 112C205.1 112 112 205.1 112 320C112 434.9 205.1 528 320 528C434.9 528 528 434.9 528 320C528 205.1 434.9 112 320 112zM390.7 233.9C398.5 223.2 413.5 220.8 424.2 228.6C434.9 236.4 437.3 251.4 429.5 262.1L307.4 430.1C303.3 435.8 296.9 439.4 289.9 439.9C282.9 440.4 276 437.9 271.1 433L215.2 377.1C205.8 367.7 205.8 352.5 215.2 343.2C224.6 333.9 239.8 333.8 249.1 343.2L285.1 379.2L390.7 234z"/></svg>
+      Message Sent!
+    </div>
+    <div class="thanks">Thanks for completing the form. We'll be in touch soon!</div>
+  </div>
+  <footer class="attribution">
+    Challenge by&nbsp;<a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by&nbsp;<a href="https://www.frontendmentor.io/profile/Ryusuke66">Yassine Ghezal</a>.
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

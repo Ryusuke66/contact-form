@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+    --clr-primary: hsl(169, 82%, 27%);
+    --clr-primary-light: hsl(148, 38%, 91%);
+    --clr-primary-dark: hsl(187, 24%, 22%);
+    --clr-neutral: hsl(186, 15%, 59%);
+    --error: hsl(0, 66%, 54%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--clr-primary-light);
+    font-family: "Karla", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--clr-primary-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 16px;
+    min-height: 100vh;
+}
+
+h1 {
+    margin-bottom: 32px;
+}
+
+.card {
+    background-color: white;
+    padding: 24px;
+    border-radius: 16px;
+}
+
+input,textarea {
+    font-size: 1.125em;
+}
+
+.main-label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.main-label::after {
+    content:'*';
+    color: var(--clr-primary);
+    margin-left: 8px;
+}
+
+input[type="text"], 
+input[type="email"], 
+textarea {
+    width: 100%;
+    outline: none;
+    border: 1px solid var(--clr-neutral);
+    border-radius: 8px;
+    padding: 12px 24px;
+    margin-bottom: 24px;
+    font-family: inherit;
+    color: inherit;
+}
+
+input[type="text"]:hover, 
+input[type="email"]:hover, 
+textarea:hover, 
+.checkbox-box:hover {
+    border-color: var(--clr-primary);
+    cursor: pointer;
+}
+
+.checkbox-group-container {
+    margin-bottom: 24px;
+}
+
+.checkbox-box {
+    flex: 1;
+    border: 1px solid var(--clr-neutral);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    margin-bottom: 16px;
+    font-size: 1.125em;
+    transition: background-color 0.2s ease;
+}
+
+.checkbox-box input[type="checkbox"] {
+    display: none;
+}
+
+.circle {
+    height: 20px;
+    width: 20px;
+    border: 1px solid var(--clr-neutral);
+    border-radius: 50%;
+    position: relative;
+}
+
+.checkbox-box:hover {
+    background-color: white;
+}
+
+.checkbox-box:hover .circle {
+    border-color: var(--clr-primary);
+}
+
+.checkbox-box:has(input[type="checkbox"]:checked):hover {
+    background-color: white;
+}
+
+.circle::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 12px;
+    height: 12px;
+    background-color: var(--clr-primary);
+    border-radius: 50%;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.checkbox-box:has(input[type="checkbox"]:checked) {
+    background-color: var(--clr-primary-light);
+    border-color: var(--clr-primary);
+}
+
+.checkbox-box input[type="checkbox"]:checked + .circle {
+    border-color: var(--clr-primary);
+}
+
+.checkbox-box input[type="checkbox"]:checked + .circle::after {
+    opacity: 1;
+}
+
+.checkbox-box label {
+    width: 100%;
+}
+
+textarea {
+    resize: none;
+    margin-bottom: 0;
+    height: 240px;
+}
+
+.consent-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 40px;
+    padding-right: 16px;
+}
+
+.consent-box * {
+    cursor: pointer;
+}
+
+.consent-box label {
+    margin: 0;
+}
+
+.square {
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#consent {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--clr-primary);
+    transition: .1s ease-in-out;
+}
+
+button {
+    width: 100%;
+    height: 60px;
+    color: white;
+    background-color: var(--clr-primary);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.125em;
+    font-family: inherit;
+    margin-top: 40px;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+}
+
+button:hover {
+    background-color: hsl(168, 83%, 14%); 
+}
+
+#message-sent {
+    position: absolute;
+    top: 0;
+    margin: 24px;
+    background-color: var(--clr-primary-dark);
+    color: white;
+    padding: 24px;
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+#message-sent.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sent {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.125em;
+    font-weight: 700;
+}
+
+.thanks {
+    margin-top: 8px;
+    color: var(--clr-primary-light);
+}
+
+.error-msg {
+    color: var(--error);
+    margin-top: 8px;
+    margin-bottom: 16px;
+    display: none;
+}
+
+input.invalid, textarea.invalid {
+    border-color: hsl(0, 66%, 54%) !important;
+    margin-bottom: 0px !important;
+}
+
+form.error .error-msg {
+    display: block;
+}
+
+footer {
+    position: fixed;
+    bottom: -60px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:white;
+    transition: bottom .3s ease;
+}
+
+body:hover footer {
+    bottom: 0;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 128px 0;
+    }
+
+    .card {
+        padding: 40px;
+        width: 690px;
+    }
+
+    .full-name, 
+    .checkbox-group-container {
+        display: flex;
+        gap: 16px;
+    }
+
+    .checkbox-group-container,
+    .checkbox-box {
+        margin-bottom: 8px;
+    }
+
+    .fname,
+    .lname {
+        flex: 1;
+    }
+
+    textarea {
+        height: 132px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .card {
+        width: 736px;
+    }
+}
