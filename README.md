@@ -62,4 +62,4 @@ I used GitHub Copilot to help me brainstorm solutions and autocomplete repetitiv
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Ryusuke66)
+- Frontend Mentor - [Yassine Ghezal](https://www.frontendmentor.io/profile/Ryusuke66)
